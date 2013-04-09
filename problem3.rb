@@ -1,3 +1,9 @@
+#This code solves the problem but it's not very efficient. For very large
+#numbers, it needs to be stopped by hand.
+#The is_prime? function, however, works pretty decently since
+#it includes some basic checks for divisibility which bring
+#down the processing time considerably
+
 def is_prime?(x)
 	is_prime = true
 	digits = x.to_s.split("").map {|digit| digit.to_i}
