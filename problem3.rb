@@ -16,25 +16,20 @@ def is_prime?(x)
 	is_prime
 end
 
-puts "Which nth prime do you want (enter n):"
+puts "Which number do you want the prime factors for?"
 num = gets.chomp
 num = Integer(num)
 
 
 start = Time.now
 
-found = 0
-prime = 2
+primefactor = 1
 
-loop do 
-	if is_prime?(prime)
-		found += 1
+for i in 2..num
+	if num % i == 0 && is_prime?(i)
+		puts i
 	end
-	break if found = num
-	prime += 1
 end
-
-puts "The #{num}th prime es #{prime}"
 
 system("./script1", "argX")
 puts "Duration: #{Time.now - start} seconds"
