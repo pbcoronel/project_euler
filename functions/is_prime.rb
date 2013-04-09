@@ -1,6 +1,6 @@
 #This function implements a brute force check for primality.
 #It has some divisibility checks that improve performance, but
-#it's still not a very efficiente algorithm.
+#it's still not a very efficient algorithm.
 
 def is_prime?(x)
 	is_prime = true
