@@ -1,4 +1,4 @@
-# Using diviso number cunction based on the exponents of the prime divisors
+# Using divisor number function based on the exponents of the prime divisors
 require 'prime'
 
 puts "How many divisors?"
