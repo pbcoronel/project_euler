@@ -1,12 +1,10 @@
-sum = 0
-i = 0
+# this code has been refactored 1 time
 
-loop do
-	if i % 3 == 0 || i % 5 == 0
-		sum += i
-	end
-	i += 1
-	break if i == 1000
+def fizzbuzz_sum(n)
+  (1...n).to_a.select{|x| x%3==0 || x%5==0}.inject(:+)
 end
 
-puts sum
+puts "Enter ceiling:"
+ceiling = gets.chomp.to_i
+
+p fizzbuzz_sum(ceiling)
