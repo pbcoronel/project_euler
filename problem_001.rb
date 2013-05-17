@@ -1,7 +1,7 @@
-# this code has been refactored 1 time
+# This code has been refactored 1 time
 
 def fizzbuzz_sum(n)
-  (1...n).to_a.select{|x| x%3==0 || x%5==0}.inject(:+)
+  (1...n).select{|x| x%3==0 || x%5==0}.inject(:+)
 end
 
 puts "Enter ceiling:"
