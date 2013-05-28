@@ -1,25 +1,25 @@
-#This code solves the problem but it's not very efficient. For very large
-#numbers, it needs to be stopped by hand.
-#The is_prime? function, however, works pretty decently since
-#it includes some basic checks for divisibility which bring
-#down the processing time considerably
+# ad-hoc prime checker. using the library is, of course, much more efficient
+# but this works ok for now.
 
 def is_prime?(x)
-	is_prime = true
-	digits = x.to_s.split("").map {|digit| digit.to_i}
-	#Multiples rules check
-	if x > 2 && digits.last % 2 == 0
+  is_prime = true
+  digits = x.to_s.split("").map {|digit| digit.to_i}
+  #Multiples rules check
+  if x > 2 && digits.last % 2 == 0
+	is_prime = false
+  elsif x > 3 && digits.inject(:+) % 3 == 0
+  	is_prime = false
+  elsif x > 5 && (digits.last == 0 || digits.last == 5)
+	is_prime = false
+  # Brute force check
+  else
+	for i in 2..x-1
+   	  if x % i == 0
 		is_prime = false
-	elsif x > 5 && (digits.last == 0 || digits.last == 5)
-		is_prime = false
-	# Brute force check
-	else
-		for i in 2..x-1
-			if x % i == 0
-				is_prime = false
-			end
-	end	end
-	is_prime
+	  end
+	end	
+  end
+  is_prime
 end
 
 puts "Which number do you want the prime factors for?"

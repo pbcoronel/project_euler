@@ -1,15 +1,18 @@
-fib_2 = 1
-fib_1 = 1
-sum = 0
+def evenfib_sum(ceiling)
+  curr = 1
+  succ = 2
 
-loop do |fib_0|
-	fib_0 = fib_1 + fib_2
-	if fib_0 < 4000000 && fib_0 % 2 == 0
-		sum += fib_0
-	end
-	fib_2 = fib_1
-	fib_1 = fib_0
-	break if fib_0 > 4000000
+  sum = 0
+
+  until curr > ceiling do 
+    curr, succ = succ, curr + succ
+	sum += curr if curr % 2 == 0
+  end
+
+  return sum
 end
 
-puts sum
+puts "Enter ceiling:"
+ceiling = gets.chomp.to_i
+
+p evenfib_sum(ceiling)
