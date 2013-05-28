@@ -1,21 +1,12 @@
+# this is the hard way of doing this
+
 puts "Enter limit:"
-limit = gets.chomp
-limit = Integer(limit)
+limit = gets.chomp.to_i
 
-x = limit
+limit.even? ? i = limit : i = limit +1
 
-loop do
-	test = 1
-	for i in 1..limit
-		if x % i == 0
-			test *= 1
-		else
-			test *= 0
-			break
-		end
-	end
-	break if test == 1
-	x += 1	
+until (1..limit).all?{|x| i % x == 0} do 
+  i += 2
 end
 
-puts x
+puts i

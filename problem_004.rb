@@ -1,18 +1,18 @@
+#refactoring: 
+# 1.- Made more efficient (only check half the search space)
+# 2.- Better looking code
+
 def is_pal?(x)
-	if x.to_s == x.to_s.reverse
-		return true
-	else
-		return false
-	end
+  x.to_s == x.to_s.reverse	
 end
 
-largest_pal = 0
+largest_pal = [0,0,0]
 
-for i in 100..999
-	for j in 100..999
-		if is_pal?(i*j) and (i*j) > largest_pal
-			largest_pal = i*j
-			puts largest_pal.to_s + ", " + i.to_s + ", " + j.to_s
-		end
-	end
+(100..999).each do |i|
+  (i..999).each do |j|
+    largest_pal = [i*j, i, j] if is_pal?(i*j) && (i*j) > largest_pal[0]
+  end
 end
+
+
+p largest_pal
