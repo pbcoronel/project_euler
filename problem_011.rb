@@ -25,44 +25,38 @@ matrix = [
 greatest_product = 0
 
 #Check verticals
-for i in 0..16
-	for j in 0..19
-		product = matrix[i][j]*matrix[i+1][j]*matrix[i+2][j]*matrix[i+3][j]
-		if product > greatest_product
-			greatest_product = product
-		end
-	end
+(0..16).each do |i|
+  (0..19).each do |j|
+    product = matrix.transpose[j][i..i+3].inject(:*)
+	greatest_product = product if product > greatest_product
+  end
 end
 
 puts "Checked verticals"
 
 #Check horizontals
-for i in 0..19
-	for j in 0..16
-		product = matrix[i][j]*matrix[i][j+1]*matrix[i][j+2]*matrix[i][j+3]
-		if product > greatest_product
-			greatest_product = product
-		end
-	end
+(0..19).each do |i|
+  (0..16).each do |j|
+	product = matrix[i][j..j+3].inject(:*)
+	greatest_product = product if product > greatest_product
+  end
 end
 
 puts "Checked horizontals"
 
 #Check right diagonals
-for i in 0..16
-	for j in 0..16
-		product = matrix[i][j]*matrix[i+1][j+1]*matrix[i+2][j+2]*matrix[i+3][j+3]
-		if product > greatest_product
-			greatest_product = product
-		end
-	end
+(0..16).each do |i|
+  (0..16).each do |j|
+	product = matrix[i][j]*matrix[i+1][j+1]*matrix[i+2][j+2]*matrix[i+3][j+3]
+	greatest_product = product if product > greatest_product
+  end
 end
 
 puts "Checked right diagonals"
 
 #Check left diagonals
-for i in 3..19
-	for j in 0..16
+(3..19).each do |i|
+  (0..16).each do |j|
 		product = matrix[i][j]*matrix[i-1][j+1]*matrix[i-2][j+2]*matrix[i-3][j+3]
 		if product > greatest_product
 			greatest_product = product

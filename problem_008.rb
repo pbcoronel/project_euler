@@ -3,11 +3,9 @@ digits = number.split("").map {|digit| digit.to_i}
 
 largest_prod = 0
 
-for i in 0..995
-	prod = digits[i]*digits[i+1]*digits[i+2]*digits[i+3]*digits[i+4]
-	if prod > largest_prod
-		largest_prod = prod
-	end
+(0..995).each do |i|
+	prod = digits[i..i+4].inject(:*)
+	largest_prod = prod if prod > largest_prod
 end
 
 puts largest_prod
