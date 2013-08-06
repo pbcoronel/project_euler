@@ -1,4 +1,4 @@
-# Brute force but we know an upper limit has to Brute
+# Brute force but we know an upper limit has to be
 # 5*9⁵ = 295245
 
 puts "Enter power:"
