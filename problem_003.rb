@@ -11,16 +11,16 @@ def is_prime?(x)
   true
 end
 
-puts "Which number do you want the prime factors for?"
-num = gets.chomp.to_i
-factors = []
+def max_prime_factor(num)
+  factors = []
 
-while num > 1 do
-  pfactor = (2..num).find {|n| num % n == 0}
-  factors << pfactor
-  num = num / pfactor
+  while num > 1 do
+    pfactor = (2..num).find {|n| num % n == 0}
+    factors << pfactor
+    num = num / pfactor
+  end
+  factors.uniq.max
 end
 
-puts "The unique prime factors are:"
-p factors.uniq
-puts "The largest prime factor is #{factors.max}"
+p max_prime_factor(600851475143)
+

@@ -1,18 +1,12 @@
 def evenfib_sum(ceiling)
-  curr = 1
-  succ = 2
-
+  a, b = 1, 1
   sum = 0
-
-  until curr > ceiling do 
-    curr, succ = succ, curr + succ
-	sum += curr if curr % 2 == 0
+  while ceiling > a do
+    sum += a if a%2==0
+    b, a = a, a+b
   end
 
   return sum
 end
 
-puts "Enter ceiling:"
-ceiling = gets.chomp.to_i
-
-p evenfib_sum(ceiling)
+p evenfib_sum(4000000)
