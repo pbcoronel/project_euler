@@ -4,23 +4,25 @@
 # where odd(n) returns the nth odd number.
 # So we can just work out from the center and add the vortices for every side.
 
-puts "Enter spiral dimension:"
-dim = gets.chomp.to_i
+
+def vortexsum(dim)
 
 vortexsum = 0
 
-for i in 1..dim
-	unless i % 2 == 0
-		# This will make us go through every odd number up to the dimension, equiv. to odd(n)
-		if i == 1
-			vortexsum += 1
-		else
-			vortexsum += i ** 2
-			vortexsum += i ** 2 - (i-1)
-			vortexsum += i ** 2 - 2*(i-1)
-			vortexsum += i ** 2 - 3*(i-1)
+	(1..dim).each do |i|
+		unless i % 2 == 0
+			# This will make us go through every odd number up to the dimension, equiv. to odd(n)
+			if i == 1
+				vortexsum += 1
+			else
+				vortexsum += i ** 2
+				vortexsum += i ** 2 - (i-1)
+				vortexsum += i ** 2 - 2*(i-1)
+				vortexsum += i ** 2 - 3*(i-1)
+			end
 		end
 	end
+return vortexsum
 end
 
-puts "Vortexsum: #{vortexsum}"
+p vortexsum(1001)

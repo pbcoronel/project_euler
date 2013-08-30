@@ -4,14 +4,18 @@ def collatz(num, array=[])
 	num.even? ? collatz(num / 2, array) : collatz(3 * num + 1, array)
 end
 
-maxseed = 0
-maxcollatz = 0
+def starting_number(limit)
+	maxseed = 0
+	maxcollatz = 0
 
-(1...1000000).each do |i|
-  if collatz(i) > maxcollatz
-  	maxcollatz = collatz(i) 
-  	maxseed = i
-  end
+	(1...limit).each do |i|
+	  if collatz(i) > maxcollatz
+	  	maxcollatz = collatz(i) 
+	  	maxseed = i
+	  end
+	end
+
+	return maxseed
 end
 
-p maxseed
+p starting_number(1000000)

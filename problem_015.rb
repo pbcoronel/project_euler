@@ -4,8 +4,7 @@
 
 
 def factorial(n)
-  return 1 if n.zero?
-  1.upto(n).inject(:*)
+  n == 0 ? 1 : n*factorial(n-1)
 end
 
 n = 40

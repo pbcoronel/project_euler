@@ -1,5 +1,8 @@
-squareofsum = (100*101/2) ** 2
-sumofsquares = 0
-(1..100).each {|i| sumofsquares += i**2}
+def sum_square_diff(n)
+	squareofsum = (n*(n+1)/2) ** 2
+	sumofsquares = (1..n).to_a.map{|e| e**2}.inject(:+)
+	return squareofsum - sumofsquares
+end
 
-puts squareofsum - sumofsquares
+p sum_square_diff(100)
+

@@ -64,6 +64,4 @@ end
 
 puts "Checked left diagonals"
 
-
-
 puts greatest_product

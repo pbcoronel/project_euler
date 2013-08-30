@@ -1,7 +1,1 @@
-num = 2 ** 1000
-array = num.to_s.split("").map {|digit| digit.to_i}
-sum = 0
-array.each do |x|
-	sum += x
-end
-puts sum
+p (2**1000).to_s.split("").map{|d|d.to_i}.inject(:+)
