@@ -9,19 +9,19 @@ def vortexsum(dim)
 
 vortexsum = 0
 
-	(1..dim).each do |i|
-		unless i % 2 == 0
-			# This will make us go through every odd number up to the dimension, equiv. to odd(n)
-			if i == 1
-				vortexsum += 1
-			else
-				vortexsum += i ** 2
-				vortexsum += i ** 2 - (i-1)
-				vortexsum += i ** 2 - 2*(i-1)
-				vortexsum += i ** 2 - 3*(i-1)
-			end
-		end
-	end
+  (1..dim).each do |i|
+    unless i % 2 == 0
+      # This will make us go through every odd number up to the dimension, equiv. to odd(n)
+      if i == 1
+        vortexsum += 1
+      else
+        vortexsum += i ** 2
+        vortexsum += i ** 2 - (i-1)
+        vortexsum += i ** 2 - 2*(i-1)
+        vortexsum += i ** 2 - 3*(i-1)
+      end
+    end
+  end
 return vortexsum
 end
 

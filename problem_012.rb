@@ -5,17 +5,17 @@
 require 'prime'
 
 def triangle(divisors)
-	triangle = 0
-	factors = 0
-	i = 0
+  triangle = 0
+  factors = 0
+  i = 0
 
-	until factors > divisors do 
-		factors = 1
-		i += 1
-		triangle += i
-		triangle.prime_division.each {|f| factors *= f[1]+1}  
-	end
-	return triangle
+  until factors > divisors do 
+    factors = 1
+    i += 1
+    triangle += i
+    triangle.prime_division.each {|f| factors *= f[1]+1}  
+  end
+  return triangle
 end
 
 p triangle(500)

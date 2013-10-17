@@ -25,32 +25,32 @@ bigtriangle = [[75],
 
 
 def sumarray(arr1, arr2)
-	array = []
-	i = 0
-	max = arr2.length - 1
-	arr2.each do |elem|
-		case i
-		when 0
-			array << elem + arr1[i]
-		when max
-			array << elem + arr1[i-1] 
-		else
-			array << [elem + arr1[i],elem + arr1[i-1]].max 
-		end
-		i += 1
-	end
-	return array
+  array = []
+  i = 0
+  max = arr2.length - 1
+  arr2.each do |elem|
+    case i
+    when 0
+      array << elem + arr1[i]
+    when max
+      array << elem + arr1[i-1] 
+    else
+      array << [elem + arr1[i],elem + arr1[i-1]].max 
+    end
+    i += 1
+  end
+  return array
 end
 
 def tripath(arr)
-	ops = arr.length - 1
-	i = 0
-	array = arr[i]
-	ops.times do
-		array = sumarray(array,arr[i+1])
-		i += 1
-	end
-	return array
+  ops = arr.length - 1
+  i = 0
+  array = arr[i]
+  ops.times do
+    array = sumarray(array,arr[i+1])
+    i += 1
+  end
+  return array
 end
 
 puts tripath(bigtriangle).max

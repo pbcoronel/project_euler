@@ -8,15 +8,15 @@ sum = 0
 digits = []
 
 for i in 2..300000
-	digits = i.to_s.split("").map {|digit| digit.to_i}
-	sumpowers = 0
-	digits.each do |dig|
-		sumpowers += dig ** power		
-	end
-	if i == sumpowers
-		puts "Found: #{i}"
-		sum += i
-	end
+  digits = i.to_s.split("").map {|digit| digit.to_i}
+  sumpowers = 0
+  digits.each do |dig|
+    sumpowers += dig ** power   
+  end
+  if i == sumpowers
+    puts "Found: #{i}"
+    sum += i
+  end
 end
 
 puts "---"

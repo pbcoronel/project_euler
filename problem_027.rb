@@ -4,7 +4,7 @@
 require 'prime'
 
 def qfunc(n,a,b)
-	result = n**2 + (a*n) + b
+  result = n**2 + (a*n) + b
 end
 
 result_array = []
@@ -14,23 +14,23 @@ maxa = 0
 maxb = 0
 
 for a in -999..999
-	puts a
-	for b in -999..999
-		for n in 0..80
-			unless qfunc(n,a,b).prime?
-				array = [n,a,b]
-				result_array << array
-				if n > maxn
-					maxn = n 
-					maxa = a 
-					maxb = b 
-					puts "Max n: #{maxn}, a: #{maxa}, b: #{maxb}"
-					wait = gets.chomp
-				end
-				break
-			end
-		end
-	end
+  puts a
+  for b in -999..999
+    for n in 0..80
+      unless qfunc(n,a,b).prime?
+        array = [n,a,b]
+        result_array << array
+        if n > maxn
+          maxn = n 
+          maxa = a 
+          maxb = b 
+          puts "Max n: #{maxn}, a: #{maxa}, b: #{maxb}"
+          wait = gets.chomp
+        end
+        break
+      end
+    end
+  end
 end
 
 

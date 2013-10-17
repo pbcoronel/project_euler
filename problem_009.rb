@@ -16,10 +16,10 @@ n = 0
 #Finding m and n
 (1..500).each do |i|
   (i+1..500).each do |j|
-	if 500 % (j*i+j**2)==0
-	  m, n = j, i
-	  break
-	end
+  if 500 % (j*i+j**2)==0
+    m, n = j, i
+    break
+  end
   end
   break if m > 0 && n > 0
 end

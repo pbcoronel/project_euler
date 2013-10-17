@@ -1,10 +1,10 @@
 def largest_product(str)
-	digits = str.split("").map {|digit| digit.to_i}
-	largest_prod = 0
-	(0..995).each do |i|
-		prod = digits[i..i+4].inject(:*)
-		largest_prod = prod if prod > largest_prod
-	end
+  digits = str.split("").map {|digit| digit.to_i}
+  largest_prod = 0
+  (0..995).each do |i|
+    prod = digits[i..i+4].inject(:*)
+    largest_prod = prod if prod > largest_prod
+  end
   return largest_prod
 end
 

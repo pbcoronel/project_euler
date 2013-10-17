@@ -9,13 +9,13 @@ def factors_of(number)
   full_array = divisors.sort.map{|div| [div, number / div]}
   array = []
   full_array.each do |elem|
-  	array << elem[0]
+    array << elem[0]
   end
   return array
 end
 
 def type(number)
-	d_func = factors_of(number)[0..-2].inject(:+)
+  d_func = factors_of(number)[0..-2].inject(:+)
   if d_func < number
     return 0
   elsif d_func > number

@@ -9,13 +9,13 @@ def factors_of(number)
   full_array = divisors.sort.map{|div| [div, number / div]}
   array = []
   full_array.each do |elem|
-  	array << elem[0]
+    array << elem[0]
   end
   return array
 end
 
 def d_function(number)
-	factors_of(number)[0..-2].inject(:+)
+  factors_of(number)[0..-2].inject(:+)
 end
 
 puts "Enter ceiling:"
@@ -25,7 +25,7 @@ puts "---"
 arr1 = []
 
 for i in 2...ceiling
-	arr1 << [i,d_function(i)]
+  arr1 << [i,d_function(i)]
 end
 
 arr2 = arr1
@@ -33,9 +33,9 @@ arr2 = arr1
 sum = 0
 
 arr1.each do |elem|
-	arr2.each do |elem2|
-		sum += elem[0] if elem[0] == elem2[1] && elem[1] == elem2[0] && elem[0] != elem[1]
-	end
+  arr2.each do |elem2|
+    sum += elem[0] if elem[0] == elem2[1] && elem[1] == elem2[0] && elem[0] != elem[1]
+  end
 end
 
 puts sum
