@@ -25,3 +25,5 @@ end
 
 limit = 1000000
 p sum_of_sums(limit, true)
+
+# Onlye 2 numbers found, sum of them is 40730.s
