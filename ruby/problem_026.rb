@@ -7,11 +7,11 @@ limit = gets.chomp.to_i
 maxcycle = 0
 maxd = 0
 
-for i in 2...limit
+(2..limit).each do |i|
   num = 1
   nums = []
   cycle = 0
-  loop do 
+  loop do
     divnum = num * 10
     if nums.include?(divnum)
       divnum == 0 ? cycle = 0 : cycle = nums.length - nums.index(divnum)
